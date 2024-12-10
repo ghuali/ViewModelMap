@@ -57,6 +57,12 @@ dependencies {
     // Lifecycle
     implementation (libs.androidx.lifecycle.runtime.ktx.v261)
 
+    //ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.lifecycle.viewmodel.compose)
+
+    //Mapas
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
