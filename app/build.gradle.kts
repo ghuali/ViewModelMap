@@ -50,6 +50,7 @@ dependencies {
 
     // Room
     implementation (libs.androidx.room.runtime)
+    implementation(libs.androidx.room.common)
     ksp (libs.androidx.room.compiler)
     implementation (libs.androidx.room.ktx)
 

@@ -1,4 +1,4 @@
 package com.angel.viewmodelroommapa.data
 
-interface TipoLugarDao {
+class TipoMarcador {
 }

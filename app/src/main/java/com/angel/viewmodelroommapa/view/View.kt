@@ -1,4 +1,4 @@
 package com.angel.viewmodelroommapa.view
 
-class MainMapApp {
+class View {
 }
