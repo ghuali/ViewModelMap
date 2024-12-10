@@ -11,11 +11,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.angel.viewmodelroommapa.data.AppDatabase
 import com.angel.viewmodelroommapa.ui.theme.ViewModelRoomMapaTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val database = AppDatabase.getDatabase(this)
+        val marcadorDao = database.MarcadorDao()
         enableEdgeToEdge()
         setContent {
             ViewModelRoomMapaTheme {
@@ -30,18 +33,5 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ViewModelRoomMapaTheme {
-        Greeting("Android")
-    }
 }
