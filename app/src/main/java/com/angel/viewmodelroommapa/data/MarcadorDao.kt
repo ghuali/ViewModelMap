@@ -9,8 +9,7 @@ import androidx.room.Update
 
 @Dao
 interface
-MarcadorDao { @Insert
-suspend fun insert(marcador: Marcador)
+MarcadorDao { @Insert suspend fun insert(marcador: Marcador)
     @Query("SELECT * FROM marcador")
     suspend fun getAllMarcador(): List<marcador>
     @Update
