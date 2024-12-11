@@ -10,8 +10,7 @@ val GoogleSat: OnlineTileSourceBase = object : XYTileSource(
     )
 ) { override fun getTileURLString(aTile: Long): String {
     return baseUrl + "/vt/lyrs=s&x=" + MapTileIndex.getX(aTile) + "&y=" + MapTileIndex.getY(
-        aTile
-
-}
+        aTile)
+    }
 
 }
