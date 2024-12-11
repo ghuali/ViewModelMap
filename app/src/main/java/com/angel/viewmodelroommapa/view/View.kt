@@ -4,6 +4,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.angel.viewmodelroommapa.ViewModel.MarcadorViewModel
 
+import org.osmdroid.tileprovider.tilesource.OnlineTileSourceBase
+import org.osmdroid.tileprovider.tilesource.XYTileSource
+import org.osmdroid.util.MapTileIndex
+
 val GoogleSat: OnlineTileSourceBase = object : XYTileSource(
     "Google-Sat",
     0, 19, 256, ".png", arrayOf(
