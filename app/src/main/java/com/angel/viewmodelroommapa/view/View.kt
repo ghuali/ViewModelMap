@@ -2,11 +2,14 @@ package com.angel.viewmodelroommapa.view
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import com.angel.viewmodelroommapa.ViewModel.MarcadorViewModel
+import com.utsman.osmandcompose.rememberCameraState
 
 import org.osmdroid.tileprovider.tilesource.OnlineTileSourceBase
 import org.osmdroid.tileprovider.tilesource.XYTileSource
+import org.osmdroid.util.GeoPoint
 import org.osmdroid.util.MapTileIndex
 
 val GoogleSat: OnlineTileSourceBase = object : XYTileSource(
@@ -27,5 +30,6 @@ val GoogleSat: OnlineTileSourceBase = object : XYTileSource(
 fun MyMapView(modifier: Modifier = Modifier, viewModel: MarcadorViewModel) {
     val marcadoresWithTipo by viewModel.marcadoresWithTipo.collectAsState(initial = emptyList())
 
+    // define camera state
 
 }
