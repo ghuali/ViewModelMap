@@ -8,6 +8,8 @@ val GoogleSat: OnlineTileSourceBase = object : XYTileSource(
         "https://mt2.google.com",
         "https://mt3.google.com"
     )
-) {
+) { override fun getTileURLString(aTile: Long): String {
+
+}
 
 }
