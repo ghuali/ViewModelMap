@@ -31,5 +31,8 @@ fun MyMapView(modifier: Modifier = Modifier, viewModel: MarcadorViewModel) {
     val marcadoresWithTipo by viewModel.marcadoresWithTipo.collectAsState(initial = emptyList())
 
     // define camera state
-
+    val cameraState = rememberCameraState {
+        geoPoint = GeoPoint(28.957375205489004, -13.554245657440829)
+        zoom = 17.0
+    }
 }
