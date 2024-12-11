@@ -14,5 +14,10 @@ class MarcadorViewModel(private val marcadorDao: MarcadorDao) : ViewModel() {
 }
 
 class ViewModelFactory(private val marcadorDao: MarcadorDao) : ViewModelProvider.Factory {
-    override fun <A : ViewModel> create(modelClass: Class<A>):
+    override fun <A : ViewModel> create(modelClass: Class<A>): A {
+        if (modelClass.isAssignableFrom(MarcadorViewModel::class.java)) {
+            return MarcadorViewModel(marcadorDao) as A
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
+    }
 }
