@@ -62,6 +62,8 @@ dependencies {
     implementation (libs.androidx.lifecycle.viewmodel.compose)
 
     //Mapas
+    implementation(libs.osmdroid.android)
+    implementation(libs.osm.android.compose)
 
 
     implementation(libs.androidx.core.ktx)
