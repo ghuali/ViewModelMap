@@ -14,3 +14,5 @@ class MarcadorViewModel(private val marcadorDao: MarcadorDao) : ViewModel() {
 }
 
 class ViewModelFactory(private val marcadorDao: MarcadorDao) : ViewModelProvider.Factory {
+    override fun <A : ViewModel> create(modelClass: Class<A>):
+}
