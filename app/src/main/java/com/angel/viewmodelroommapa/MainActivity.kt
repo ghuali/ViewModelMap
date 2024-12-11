@@ -11,6 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.angel.viewmodelroommapa.ViewModel.MarcadorViewModel
+import com.angel.viewmodelroommapa.ViewModel.ViewModelFactory
 import com.angel.viewmodelroommapa.data.AppDatabase
 import com.angel.viewmodelroommapa.ui.theme.ViewModelRoomMapaTheme
 
@@ -23,9 +26,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             ViewModelRoomMapaTheme {
                 Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+                    val viewModel: MarcadorViewModel = viewModel(factory = ViewModelFactory(marcadorDao))
+
+
+
+
                     )
                 }
             }
