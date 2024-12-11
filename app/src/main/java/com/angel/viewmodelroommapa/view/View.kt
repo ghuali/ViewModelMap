@@ -1,6 +1,7 @@
 package com.angel.viewmodelroommapa.view
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import com.angel.viewmodelroommapa.ViewModel.MarcadorViewModel
 
@@ -23,4 +24,8 @@ val GoogleSat: OnlineTileSourceBase = object : XYTileSource(
 }
 
 @Composable
-fun MyMapView(modifier: Modifier = Modifier, viewModel: MarcadorViewModel) {}
+fun MyMapView(modifier: Modifier = Modifier, viewModel: MarcadorViewModel) {
+    val marcadoresWithTipo by viewModel.marcadoresWithTipo.collectAsState(initial = emptyList())
+
+
+}
