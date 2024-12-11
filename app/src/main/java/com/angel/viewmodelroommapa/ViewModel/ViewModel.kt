@@ -11,3 +11,5 @@ class MarcadorViewModel(private val marcadorDao: MarcadorDao) : ViewModel() {
     val marcadoresWithTipo: Flow<List<MarcadorWithTipo>> =
         marcadorDao.getAllMarcadoresAndTipos()
 }
+
+class ViewModelFactory(private val marcadorDao: MarcadorDao)
