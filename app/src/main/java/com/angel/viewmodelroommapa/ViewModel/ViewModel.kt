@@ -18,6 +18,6 @@ class ViewModelFactory(private val marcadorDao: MarcadorDao) : ViewModelProvider
         if (modelClass.isAssignableFrom(MarcadorViewModel::class.java)) {
             return MarcadorViewModel(marcadorDao) as A
         }
-        throw IllegalArgumentException("Unknown ViewModel class")
+        throw IllegalArgumentException("clase desconocida")
     }
 }
