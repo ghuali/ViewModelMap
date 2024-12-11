@@ -1,6 +1,7 @@
 package com.angel.viewmodelroommapa.ViewModel
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.angel.viewmodelroommapa.data.MarcadorDao
 import com.angel.viewmodelroommapa.data.MarcadorWithTipo
 
@@ -12,4 +13,4 @@ class MarcadorViewModel(private val marcadorDao: MarcadorDao) : ViewModel() {
         marcadorDao.getAllMarcadoresAndTipos()
 }
 
-class ViewModelFactory(private val marcadorDao: MarcadorDao)
+class ViewModelFactory(private val marcadorDao: MarcadorDao) : ViewModelProvider.Factory {
