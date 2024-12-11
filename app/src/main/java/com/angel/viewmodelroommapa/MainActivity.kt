@@ -16,6 +16,7 @@ import com.angel.viewmodelroommapa.ViewModel.MarcadorViewModel
 import com.angel.viewmodelroommapa.ViewModel.ViewModelFactory
 import com.angel.viewmodelroommapa.data.AppDatabase
 import com.angel.viewmodelroommapa.ui.theme.ViewModelRoomMapaTheme
+import com.angel.viewmodelroommapa.view.MyMapView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,9 +29,9 @@ class MainActivity : ComponentActivity() {
                 Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
                     val viewModel: MarcadorViewModel = viewModel(factory = ViewModelFactory(marcadorDao))
 
-
-
-
+                    MyMapView(
+                        modifier = Modifier.padding(innerPadding),
+                        viewModel = viewModel
                     )
                 }
             }
