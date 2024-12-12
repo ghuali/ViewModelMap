@@ -1,6 +1,7 @@
 package com.angel.viewmodelroommapa.view
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -9,6 +10,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.angel.viewmodelroommapa.ViewModel.MarcadorViewModel
 import com.utsman.osmandcompose.DefaultMapProperties
+import com.utsman.osmandcompose.ZoomButtonVisibility
 import com.utsman.osmandcompose.rememberCameraState
 
 import org.osmdroid.tileprovider.tilesource.OnlineTileSourceBase
@@ -42,5 +44,14 @@ fun MyMapView(modifier: Modifier = Modifier, viewModel: MarcadorViewModel) {
 
     var mapProperties by remember {
         mutableStateOf(DefaultMapProperties)
+    }
+
+    SideEffect {
+        mapProperties = mapProperties
+            //.copy(isTilesScaledToDpi = true)
+            //.copy(tileSources = TileSourceFactory.MAPNIK)
+            .copy(tileSources = GoogleSat)
+            .copy(isEnableRotationGesture = true)
+            .copy(zoomButtonVisibility = ZoomButtonVisibility.SHOW_AND_FADEOUT)
     }
 }
