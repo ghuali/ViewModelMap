@@ -61,5 +61,5 @@ fun MyMapView(modifier: Modifier = Modifier, viewModel: MarcadorViewModel) {
         modifier = Modifier.fillMaxSize(),
         cameraState = cameraState,
         properties = mapProperties // add properties
-    )
+    ) {}
 }
