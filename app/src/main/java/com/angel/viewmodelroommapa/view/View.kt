@@ -3,8 +3,12 @@ package com.angel.viewmodelroommapa.view
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.angel.viewmodelroommapa.ViewModel.MarcadorViewModel
+import com.utsman.osmandcompose.DefaultMapProperties
 import com.utsman.osmandcompose.rememberCameraState
 
 import org.osmdroid.tileprovider.tilesource.OnlineTileSourceBase
@@ -34,5 +38,9 @@ fun MyMapView(modifier: Modifier = Modifier, viewModel: MarcadorViewModel) {
     val cameraState = rememberCameraState {
         geoPoint = GeoPoint(28.957375205489004, -13.554245657440829)
         zoom = 17.0
+    }
+
+    var mapProperties by remember {
+        mutableStateOf(DefaultMapProperties)
     }
 }
