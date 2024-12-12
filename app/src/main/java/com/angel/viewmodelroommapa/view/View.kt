@@ -1,5 +1,6 @@
 package com.angel.viewmodelroommapa.view
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.collectAsState
@@ -10,6 +11,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.angel.viewmodelroommapa.ViewModel.MarcadorViewModel
 import com.utsman.osmandcompose.DefaultMapProperties
+import com.utsman.osmandcompose.OpenStreetMap
 import com.utsman.osmandcompose.ZoomButtonVisibility
 import com.utsman.osmandcompose.rememberCameraState
 
@@ -54,4 +56,10 @@ fun MyMapView(modifier: Modifier = Modifier, viewModel: MarcadorViewModel) {
             .copy(isEnableRotationGesture = true)
             .copy(zoomButtonVisibility = ZoomButtonVisibility.SHOW_AND_FADEOUT)
     }
+
+    OpenStreetMap(
+        modifier = Modifier.fillMaxSize(),
+        cameraState = cameraState,
+        properties = mapProperties // add properties
+    )
 }
